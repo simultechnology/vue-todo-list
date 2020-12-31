@@ -1,4 +1,13 @@
 <template>
+  <ModalDialog>
+    <template v-slot:title>
+      <span style="color: red;">タイトル（赤）</span>
+    </template>
+
+    <p>1. ダイアログの内容</p>
+    <p>2. ダイアログの内容</p>
+  </ModalDialog>
+
   <input v-model="inputValue"><br>
   入力した値: <span style="font-weight: bold;">{{ inputValue }}</span> <br>
   <button v-on:click="handleClick">
@@ -22,9 +31,10 @@
 <script>
 import * as _ from "lodash"
 import MyToDoItem from "./MyToDoItem.vue";
+import ModalDialog from "./ModalDialog.vue";
 export default {
   name: 'MyToDoList',
-  components: { MyToDoItem },
+  components: {ModalDialog, MyToDoItem },
   data() {
     const todoItems = [
       { id: 1, done: false, text: 'Go out to sea' },

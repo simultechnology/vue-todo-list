@@ -1,4 +1,6 @@
 <template>
+  <h1> Counter </h1>
+  <slot v-bind:foo="'Hello World'" />
   カウント: {{ count }}
   <button v-on:click="handleClick">+1</button>
 </template>
